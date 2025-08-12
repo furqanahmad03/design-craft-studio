@@ -1,0 +1,437 @@
+{
+    "decorations": [
+        {
+            "name": "Floral Pattern",
+            "type": "Pattern",
+            "colorPalette": [
+                "Pink",
+                "Green",
+                "White"
+            ],
+            "style": "Vintage",
+            "size": "Medium",
+            "placement": "Full Surface",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "DesignCraft Studio",
+                "address": "789 Creative Lane, Arts District, CA 90210",
+                "phone": "+1 (555) 234-5678",
+                "email": "designs@designcraft.com",
+                "timeline": "2-3 business days",
+                "rating": 4.9,
+                "specializations": ["Nature Designs", "Vintage Patterns", "SVG Graphics"]
+            }
+        },
+        {
+            "name": "Mountain Landscape",
+            "type": "Illustration",
+            "colorPalette": [
+                "Blue",
+                "White",
+                "Grey"
+            ],
+            "style": "Minimalist",
+            "size": "Large",
+            "placement": "Front Center",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Modern Design Lab",
+                "address": "456 Innovation Street, Tech Hub, NY 10001",
+                "phone": "+1 (555) 345-6789",
+                "email": "hello@moderndesignlab.com",
+                "timeline": "1-2 business days",
+                "rating": 4.7,
+                "specializations": ["Modern Graphics", "Geometric Patterns", "Vector Art"]
+            }
+        },
+        {
+            "name": "Company Logo",
+            "type": "Logo",
+            "colorPalette": [
+                "Black",
+                "White",
+                "Red"
+            ],
+            "style": "Corporate",
+            "size": "Small",
+            "placement": "Top Left",
+            "fileFormat": "AI",
+            "vendor": {
+                "name": "Artistic Expressions Co.",
+                "address": "123 Art Avenue, Creative Quarter, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "art@artistic-expressions.com",
+                "timeline": "3-4 business days",
+                "rating": 4.8,
+                "specializations": ["Abstract Art", "Expressionist Style", "High-Resolution"]
+            }
+        },
+        {
+            "name": "Abstract Geometric Shapes",
+            "type": "Pattern",
+            "colorPalette": [
+                "Yellow",
+                "Blue",
+                "Red"
+            ],
+            "style": "Modern",
+            "size": "Medium",
+            "placement": "Full Surface",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Brand Identity Pro",
+                "address": "321 Business Boulevard, Corporate Center, IL 60601",
+                "phone": "+1 (555) 567-8901",
+                "email": "branding@brandidentitypro.com",
+                "timeline": "2-3 business days",
+                "rating": 4.6,
+                "specializations": ["Corporate Branding", "Logo Design", "Minimalist Style"]
+            }
+        },
+        {
+            "name": "Vintage Bicycle Sketch",
+            "type": "Illustration",
+            "colorPalette": [
+                "Brown",
+                "Black",
+                "Ivory"
+            ],
+            "style": "Sketch",
+            "size": "Medium",
+            "placement": "Front Center",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Seasonal Designs Inc.",
+                "address": "654 Holiday Street, Celebration Plaza, FL 33101",
+                "phone": "+1 (555) 678-9012",
+                "email": "holiday@seasonaldesigns.com",
+                "timeline": "1-2 business days",
+                "rating": 4.5,
+                "specializations": ["Seasonal Themes", "Holiday Graphics", "Festive Designs"]
+            }
+        },
+        {
+            "name": "Galaxy Background",
+            "type": "Pattern",
+            "colorPalette": [
+                "Purple",
+                "Blue",
+                "Pink"
+            ],
+            "style": "Fantasy",
+            "size": "Full",
+            "placement": "Full Surface",
+            "fileFormat": "JPG",
+            "vendor": {
+                "name": "Sports Graphics Studio",
+                "address": "987 Athletic Drive, Sports Complex, CA 90210",
+                "phone": "+1 (555) 789-0123",
+                "email": "sports@sportsgraphics.com",
+                "timeline": "2-3 business days",
+                "rating": 4.7,
+                "specializations": ["Sports Graphics", "Mascot Design", "Team Branding"]
+            }
+        },
+        {
+            "name": "Palm Tree Silhouette",
+            "type": "Illustration",
+            "colorPalette": [
+                "Black",
+                "Green"
+            ],
+            "style": "Minimalist",
+            "size": "Large",
+            "placement": "Front Center",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Typography Masters",
+                "address": "147 Font Street, Letter District, NY 10001",
+                "phone": "+1 (555) 890-1234",
+                "email": "fonts@typographymasters.com",
+                "timeline": "2-3 business days",
+                "rating": 4.8,
+                "specializations": ["Typography", "Vintage Fonts", "Text Design"]
+            }
+        },
+        {
+            "name": "Motivational Text - 'Dream Big'",
+            "type": "Text",
+            "colorPalette": [
+                "Black",
+                "Gold"
+            ],
+            "style": "Handwritten",
+            "size": "Medium",
+            "placement": "Front Center",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Nature Art Studio",
+                "address": "258 Landscape Road, Scenic Valley, TX 75001",
+                "phone": "+1 (555) 901-2345",
+                "email": "nature@natureartstudio.com",
+                "timeline": "3-5 business days",
+                "rating": 4.9,
+                "specializations": ["Nature Art", "Landscape Design", "Realistic Graphics"]
+            }
+        },
+        {
+            "name": "Animal Paw Prints",
+            "type": "Pattern",
+            "colorPalette": [
+                "Brown",
+                "Black",
+                "Grey"
+            ],
+            "style": "Cute",
+            "size": "Small",
+            "placement": "Diagonal",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "DesignCraft Studio",
+                "address": "789 Creative Lane, Arts District, CA 90210",
+                "phone": "+1 (555) 234-5678",
+                "email": "designs@designcraft.com",
+                "timeline": "2-3 business days",
+                "rating": 4.9,
+                "specializations": ["Nature Designs", "Vintage Patterns", "SVG Graphics"]
+            }
+        },
+        {
+            "name": "Abstract Watercolor Splash",
+            "type": "Pattern",
+            "colorPalette": [
+                "Blue",
+                "Pink",
+                "Purple"
+            ],
+            "style": "Artistic",
+            "size": "Full",
+            "placement": "Background",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Modern Design Lab",
+                "address": "456 Innovation Street, Tech Hub, NY 10001",
+                "phone": "+1 (555) 345-6789",
+                "email": "hello@moderndesignlab.com",
+                "timeline": "1-2 business days",
+                "rating": 4.7,
+                "specializations": ["Modern Graphics", "Geometric Patterns", "Vector Art"]
+            }
+        },
+        {
+            "name": "Soccer Ball Icon",
+            "type": "Illustration",
+            "colorPalette": [
+                "Black",
+                "White"
+            ],
+            "style": "Flat",
+            "size": "Small",
+            "placement": "Bottom Right",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Artistic Expressions Co.",
+                "address": "123 Art Avenue, Creative Quarter, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "art@artistic-expressions.com",
+                "timeline": "3-4 business days",
+                "rating": 4.8,
+                "specializations": ["Abstract Art", "Expressionist Style", "High-Resolution"]
+            }
+        },
+        {
+            "name": "Minimal Sun Symbol",
+            "type": "Illustration",
+            "colorPalette": [
+                "Yellow",
+                "Orange"
+            ],
+            "style": "Minimalist",
+            "size": "Small",
+            "placement": "Top Right",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Brand Identity Pro",
+                "address": "321 Business Boulevard, Corporate Center, IL 60601",
+                "phone": "+1 (555) 567-8901",
+                "email": "branding@brandidentitypro.com",
+                "timeline": "2-3 business days",
+                "rating": 4.6,
+                "specializations": ["Corporate Branding", "Logo Design", "Minimalist Style"]
+            }
+        },
+        {
+            "name": "Comic Style Boom Text",
+            "type": "Text",
+            "colorPalette": [
+                "Red",
+                "Yellow",
+                "Black"
+            ],
+            "style": "Comic",
+            "size": "Medium",
+            "placement": "Center",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Seasonal Designs Inc.",
+                "address": "654 Holiday Street, Celebration Plaza, FL 33101",
+                "phone": "+1 (555) 678-9012",
+                "email": "holiday@seasonaldesigns.com",
+                "timeline": "1-2 business days",
+                "rating": 4.5,
+                "specializations": ["Seasonal Themes", "Holiday Graphics", "Festive Designs"]
+            }
+        },
+        {
+            "name": "Graffiti Spray Art",
+            "type": "Pattern",
+            "colorPalette": [
+                "Neon Green",
+                "Blue",
+                "Purple"
+            ],
+            "style": "Urban",
+            "size": "Large",
+            "placement": "Background",
+            "fileFormat": "JPG",
+            "vendor": {
+                "name": "Sports Graphics Studio",
+                "address": "987 Athletic Drive, Sports Complex, CA 90210",
+                "phone": "+1 (555) 789-0123",
+                "email": "sports@sportsgraphics.com",
+                "timeline": "2-3 business days",
+                "rating": 4.7,
+                "specializations": ["Sports Graphics", "Mascot Design", "Team Branding"]
+            }
+        },
+        {
+            "name": "Snowflake Design",
+            "type": "Pattern",
+            "colorPalette": [
+                "White",
+                "Light Blue"
+            ],
+            "style": "Seasonal",
+            "size": "Small",
+            "placement": "Scattered",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Typography Masters",
+                "address": "147 Font Street, Letter District, NY 10001",
+                "phone": "+1 (555) 890-1234",
+                "email": "fonts@typographymasters.com",
+                "timeline": "2-3 business days",
+                "rating": 4.8,
+                "specializations": ["Typography", "Vintage Fonts", "Text Design"]
+            }
+        },
+        {
+            "name": "Retro Cassette Tape",
+            "type": "Illustration",
+            "colorPalette": [
+                "Pink",
+                "Teal",
+                "Black"
+            ],
+            "style": "Retro",
+            "size": "Medium",
+            "placement": "Center",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Nature Art Studio",
+                "address": "258 Landscape Road, Scenic Valley, TX 75001",
+                "phone": "+1 (555) 901-2345",
+                "email": "nature@natureartstudio.com",
+                "timeline": "3-5 business days",
+                "rating": 4.9,
+                "specializations": ["Nature Art", "Landscape Design", "Realistic Graphics"]
+            }
+        },
+        {
+            "name": "Heart Icon",
+            "type": "Illustration",
+            "colorPalette": [
+                "Red",
+                "White"
+            ],
+            "style": "Flat",
+            "size": "Small",
+            "placement": "Top Left",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "DesignCraft Studio",
+                "address": "789 Creative Lane, Arts District, CA 90210",
+                "phone": "+1 (555) 234-5678",
+                "email": "designs@designcraft.com",
+                "timeline": "2-3 business days",
+                "rating": 4.9,
+                "specializations": ["Nature Designs", "Vintage Patterns", "SVG Graphics"]
+            }
+        },
+        {
+            "name": "Wave Lines Pattern",
+            "type": "Pattern",
+            "colorPalette": [
+                "Blue",
+                "Navy",
+                "White"
+            ],
+            "style": "Minimalist",
+            "size": "Full",
+            "placement": "Background",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Modern Design Lab",
+                "address": "456 Innovation Street, Tech Hub, NY 10001",
+                "phone": "+1 (555) 345-6789",
+                "email": "hello@moderndesignlab.com",
+                "timeline": "1-2 business days",
+                "rating": 4.7,
+                "specializations": ["Modern Graphics", "Geometric Patterns", "Vector Art"]
+            }
+        },
+        {
+            "name": "Mandala Circle Design",
+            "type": "Pattern",
+            "colorPalette": [
+                "Gold",
+                "White",
+                "Black"
+            ],
+            "style": "Bohemian",
+            "size": "Large",
+            "placement": "Center",
+            "fileFormat": "SVG",
+            "vendor": {
+                "name": "Artistic Expressions Co.",
+                "address": "123 Art Avenue, Creative Quarter, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "art@artistic-expressions.com",
+                "timeline": "3-4 business days",
+                "rating": 4.8,
+                "specializations": ["Abstract Art", "Expressionist Style", "High-Resolution"]
+            }
+        },
+        {
+            "name": "Custom QR Code",
+            "type": "Code",
+            "colorPalette": [
+                "Black",
+                "White"
+            ],
+            "style": "Functional",
+            "size": "Small",
+            "placement": "Bottom Left",
+            "fileFormat": "PNG",
+            "vendor": {
+                "name": "Brand Identity Pro",
+                "address": "321 Business Boulevard, Corporate Center, IL 60601",
+                "phone": "+1 (555) 567-8901",
+                "email": "branding@brandidentitypro.com",
+                "timeline": "2-3 business days",
+                "rating": 4.6,
+                "specializations": ["Corporate Branding", "Logo Design", "Minimalist Style"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,473 @@
+{
+    "products": [
+        {
+            "name": "Men's Cotton Shirt",
+            "type": "Clothing",
+            "quantity": 50,
+            "basePrice": 20.0,
+            "bulkPrice": 18.0,
+            "bulkThreshold": 10,
+            "color": [
+                "Blue",
+                "White",
+                "Black"
+            ],
+            "brand": "UrbanWear",
+            "material": "100% Cotton",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Women's Denim Jeans",
+            "type": "Clothing",
+            "quantity": 40,
+            "basePrice": 35.0,
+            "bulkPrice": 30.0,
+            "bulkThreshold": 8,
+            "color": [
+                "Dark Blue",
+                "Light Blue"
+            ],
+            "brand": "BlueWave",
+            "material": "Denim",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Classic Leather Belt",
+            "type": "Accessories",
+            "quantity": 70,
+            "basePrice": 15.0,
+            "bulkPrice": 12.0,
+            "bulkThreshold": 12,
+            "color": [
+                "Black",
+                "Brown"
+            ],
+            "brand": "BeltCraft",
+            "material": "Genuine Leather",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Graphite Pencil Set",
+            "type": "Stationery",
+            "quantity": 200,
+            "basePrice": 0.5,
+            "bulkPrice": 0.4,
+            "bulkThreshold": 50,
+            "color": [
+                "Yellow",
+                "Black"
+            ],
+            "brand": "WriteWell",
+            "material": "Wood and Graphite",
+            "vendor": {
+                "name": "Office Supplies Plus",
+                "address": "321 Stationery Road, Business Center, IL 60601",
+                "phone": "+1 (555) 789-0123",
+                "email": "orders@officesupplies.com",
+                "timeline": "4-6 business days",
+                "rating": 4.7,
+                "specializations": ["Stationery", "Office Supplies", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Ballpoint Pen",
+            "type": "Stationery",
+            "quantity": 500,
+            "basePrice": 1.0,
+            "bulkPrice": 0.8,
+            "bulkThreshold": 100,
+            "color": [
+                "Blue",
+                "Black",
+                "Red"
+            ],
+            "brand": "Inka",
+            "material": "Plastic",
+            "vendor": {
+                "name": "Office Supplies Plus",
+                "address": "321 Stationery Road, Business Center, IL 60601",
+                "phone": "+1 (555) 789-0123",
+                "email": "orders@officesupplies.com",
+                "timeline": "4-6 business days",
+                "rating": 4.7,
+                "specializations": ["Stationery", "Office Supplies", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Spiral Notebook",
+            "type": "Stationery",
+            "quantity": 300,
+            "basePrice": 2.5,
+            "bulkPrice": 2.0,
+            "bulkThreshold": 50,
+            "color": [
+                "White",
+                "Yellow"
+            ],
+            "brand": "NotePro",
+            "material": "Paper",
+            "vendor": {
+                "name": "Office Supplies Plus",
+                "address": "321 Stationery Road, Business Center, IL 60601",
+                "phone": "+1 (555) 789-0123",
+                "email": "orders@officesupplies.com",
+                "timeline": "4-6 business days",
+                "rating": 4.7,
+                "specializations": ["Stationery", "Office Supplies", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Wireless Mouse",
+            "type": "Electronics",
+            "quantity": 80,
+            "basePrice": 15.0,
+            "bulkPrice": 12.0,
+            "bulkThreshold": 20,
+            "color": [
+                "Black",
+                "Grey"
+            ],
+            "brand": "TechEase",
+            "material": "Plastic",
+            "vendor": {
+                "name": "TechShield Industries",
+                "address": "789 Tech Boulevard, Innovation Park, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "info@techshield.com",
+                "timeline": "2-4 business days",
+                "rating": 4.9,
+                "specializations": ["Electronics", "Mobile Accessories", "Protection"]
+            }
+        },
+        {
+            "name": "USB Flash Drive 32GB",
+            "type": "Electronics",
+            "quantity": 150,
+            "basePrice": 8.0,
+            "bulkPrice": 6.5,
+            "bulkThreshold": 25,
+            "color": [
+                "Black",
+                "Silver"
+            ],
+            "brand": "DataPro",
+            "material": "Plastic and Metal",
+            "vendor": {
+                "name": "TechShield Industries",
+                "address": "789 Tech Boulevard, Innovation Park, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "info@techshield.com",
+                "timeline": "2-4 business days",
+                "rating": 4.9,
+                "specializations": ["Electronics", "Mobile Accessories", "Protection"]
+            }
+        },
+        {
+            "name": "Cotton Socks (Pack of 5)",
+            "type": "Clothing",
+            "quantity": 120,
+            "basePrice": 10.0,
+            "bulkPrice": 8.5,
+            "bulkThreshold": 15,
+            "color": [
+                "White",
+                "Black",
+                "Grey"
+            ],
+            "brand": "SockWorld",
+            "material": "Cotton Blend",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Sports Water Bottle",
+            "type": "Sports",
+            "quantity": 90,
+            "basePrice": 12.0,
+            "bulkPrice": 10.0,
+            "bulkThreshold": 12,
+            "color": [
+                "Blue",
+                "Green",
+                "Red"
+            ],
+            "brand": "HydroFit",
+            "material": "BPA-Free Plastic",
+            "vendor": {
+                "name": "Sports Gear Pro",
+                "address": "654 Sports Avenue, Athletic Complex, FL 33101",
+                "phone": "+1 (555) 321-6547",
+                "email": "sales@sportsgearpro.com",
+                "timeline": "3-5 business days",
+                "rating": 4.5,
+                "specializations": ["Sports Equipment", "Outdoor Gear", "Hydration"]
+            }
+        },
+        {
+            "name": "Yoga Mat",
+            "type": "Sports",
+            "quantity": 60,
+            "basePrice": 25.0,
+            "bulkPrice": 20.0,
+            "bulkThreshold": 10,
+            "color": [
+                "Purple",
+                "Blue",
+                "Pink"
+            ],
+            "brand": "ZenFlex",
+            "material": "PVC",
+            "vendor": {
+                "name": "Sports Gear Pro",
+                "address": "654 Sports Avenue, Athletic Complex, FL 33101",
+                "phone": "+1 (555) 321-6547",
+                "email": "sales@sportsgearpro.com",
+                "timeline": "3-5 business days",
+                "rating": 4.5,
+                "specializations": ["Sports Equipment", "Outdoor Gear", "Hydration"]
+            }
+        },
+        {
+            "name": "Ceramic Coffee Mug",
+            "type": "Home & Kitchen",
+            "quantity": 200,
+            "basePrice": 5.0,
+            "bulkPrice": 4.0,
+            "bulkThreshold": 30,
+            "color": [
+                "White",
+                "Black",
+                "Navy"
+            ],
+            "brand": "BrewMaster",
+            "material": "Ceramic",
+            "vendor": {
+                "name": "Kitchen Essentials Co.",
+                "address": "456 Kitchen Lane, Home Goods Plaza, CA 90210",
+                "phone": "+1 (555) 987-6543",
+                "email": "sales@kitchenessentials.com",
+                "timeline": "3-5 business days",
+                "rating": 4.6,
+                "specializations": ["Kitchenware", "Ceramics", "Personalization"]
+            }
+        },
+        {
+            "name": "Non-stick Frying Pan",
+            "type": "Home & Kitchen",
+            "quantity": 50,
+            "basePrice": 18.0,
+            "bulkPrice": 15.0,
+            "bulkThreshold": 8,
+            "color": [
+                "Black"
+            ],
+            "brand": "CookEase",
+            "material": "Aluminum",
+            "vendor": {
+                "name": "Kitchen Essentials Co.",
+                "address": "456 Kitchen Lane, Home Goods Plaza, CA 90210",
+                "phone": "+1 (555) 987-6543",
+                "email": "sales@kitchenessentials.com",
+                "timeline": "3-5 business days",
+                "rating": 4.6,
+                "specializations": ["Kitchenware", "Ceramics", "Personalization"]
+            }
+        },
+        {
+            "name": "Bluetooth Headphones",
+            "type": "Electronics",
+            "quantity": 60,
+            "basePrice": 40.0,
+            "bulkPrice": 35.0,
+            "bulkThreshold": 10,
+            "color": [
+                "Black",
+                "White"
+            ],
+            "brand": "SoundSphere",
+            "material": "Plastic and Metal",
+            "vendor": {
+                "name": "TechShield Industries",
+                "address": "789 Tech Boulevard, Innovation Park, TX 75001",
+                "phone": "+1 (555) 456-7890",
+                "email": "info@techshield.com",
+                "timeline": "2-4 business days",
+                "rating": 4.9,
+                "specializations": ["Electronics", "Mobile Accessories", "Protection"]
+            }
+        },
+        {
+            "name": "Desk Lamp",
+            "type": "Home & Office",
+            "quantity": 90,
+            "basePrice": 22.0,
+            "bulkPrice": 18.0,
+            "bulkThreshold": 15,
+            "color": [
+                "White",
+                "Black",
+                "Blue"
+            ],
+            "brand": "BrightLite",
+            "material": "Metal",
+            "vendor": {
+                "name": "Kitchen Essentials Co.",
+                "address": "456 Kitchen Lane, Home Goods Plaza, CA 90210",
+                "phone": "+1 (555) 987-6543",
+                "email": "sales@kitchenessentials.com",
+                "timeline": "3-5 business days",
+                "rating": 4.6,
+                "specializations": ["Kitchenware", "Ceramics", "Personalization"]
+            }
+        },
+        {
+            "name": "Running Shoes",
+            "type": "Footwear",
+            "quantity": 70,
+            "basePrice": 55.0,
+            "bulkPrice": 50.0,
+            "bulkThreshold": 12,
+            "color": [
+                "Black",
+                "Grey",
+                "Blue"
+            ],
+            "brand": "RunFast",
+            "material": "Mesh and Rubber",
+            "vendor": {
+                "name": "Sports Gear Pro",
+                "address": "654 Sports Avenue, Athletic Complex, FL 33101",
+                "phone": "+1 (555) 321-6547",
+                "email": "sales@sportsgearpro.com",
+                "timeline": "3-5 business days",
+                "rating": 4.5,
+                "specializations": ["Sports Equipment", "Outdoor Gear", "Hydration"]
+            }
+        },
+        {
+            "name": "Backpack",
+            "type": "Bags",
+            "quantity": 80,
+            "basePrice": 30.0,
+            "bulkPrice": 25.0,
+            "bulkThreshold": 10,
+            "color": [
+                "Black",
+                "Navy",
+                "Grey"
+            ],
+            "brand": "CarryAll",
+            "material": "Polyester",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        },
+        {
+            "name": "Table Tennis Racket",
+            "type": "Sports",
+            "quantity": 40,
+            "basePrice": 15.0,
+            "bulkPrice": 12.0,
+            "bulkThreshold": 10,
+            "color": [
+                "Red",
+                "Black"
+            ],
+            "brand": "PingPro",
+            "material": "Wood and Rubber",
+            "vendor": {
+                "name": "Sports Gear Pro",
+                "address": "654 Sports Avenue, Athletic Complex, FL 33101",
+                "phone": "+1 (555) 321-6547",
+                "email": "sales@sportsgearpro.com",
+                "timeline": "3-5 business days",
+                "rating": 4.5,
+                "specializations": ["Sports Equipment", "Outdoor Gear", "Hydration"]
+            }
+        },
+        {
+            "name": "Laptop Stand",
+            "type": "Electronics",
+            "quantity": 60,
+            "basePrice": 20.0,
+            "bulkPrice": 17.0,
+            "bulkThreshold": 8,
+            "color": [
+                "Silver",
+                "Black"
+            ],
+            "brand": "DeskMate",
+            "material": "Aluminum",
+            "vendor": {
+                "name": "Kitchen Essentials Co.",
+                "address": "456 Kitchen Lane, Home Goods Plaza, CA 90210",
+                "phone": "+1 (555) 987-6543",
+                "email": "sales@kitchenessentials.com",
+                "timeline": "3-5 business days",
+                "rating": 4.6,
+                "specializations": ["Kitchenware", "Ceramics", "Personalization"]
+            }
+        },
+        {
+            "name": "Winter Scarf",
+            "type": "Accessories",
+            "quantity": 100,
+            "basePrice": 12.0,
+            "bulkPrice": 10.0,
+            "bulkThreshold": 15,
+            "color": [
+                "Red",
+                "Grey",
+                "Black"
+            ],
+            "brand": "WarmHug",
+            "material": "Wool",
+            "vendor": {
+                "name": "FashionCraft Solutions",
+                "address": "123 Garment Street, Textile District, NY 10001",
+                "phone": "+1 (555) 123-4567",
+                "email": "orders@fashioncraft.com",
+                "timeline": "5-7 business days",
+                "rating": 4.8,
+                "specializations": ["Clothing", "Textiles", "Custom Printing"]
+            }
+        }
+    ]
+}
