@@ -39,19 +39,33 @@ export async function POST(request: NextRequest) {
     await ensureOrdersFile();
     
     const body = await request.json();
+    console.log('API Received Body:', JSON.stringify(body, null, 2));
     
     // Validate required fields
-    if (!body.customerName || !body.customerEmail || !body.designType || !body.vendor) {
+    if (!body.customerName || !body.customerEmail || !body.designType) {
+      console.log('Validation failed: Missing required fields');
       return NextResponse.json(
-        { error: 'Missing required fields: customerName, customerEmail, designType, vendor' },
+        { error: 'Missing required fields: customerName, customerEmail, designType' },
         { status: 400 }
       );
     }
 
-    // Validate vendor structure
-    if (!body.vendor.name || !body.vendor.address || !body.vendor.phone || !body.vendor.email) {
+    // Validate vendor structure only if vendor is provided
+    if (body.vendor && (!body.vendor.name || !body.vendor.address || !body.vendor.phone || !body.vendor.email)) {
+      console.log('Validation failed: Invalid vendor structure');
       return NextResponse.json(
         { error: 'Invalid vendor information' },
+        { status: 400 }
+      );
+    }
+
+    // For custom designs, ensure customImagePath is provided
+    if (body.designType === 'custom' && !body.customImagePath) {
+      console.log('Validation failed: Missing customImagePath for custom design');
+      console.log('Body designType:', body.designType);
+      console.log('Body customImagePath:', body.customImagePath);
+      return NextResponse.json(
+        { error: 'Custom design image path is required for custom designs' },
         { status: 400 }
       );
     }
@@ -71,6 +85,8 @@ export async function POST(request: NextRequest) {
       orderDate: body.orderDate || new Date().toISOString(),
       status: body.status || 'pending',
       vendor: body.vendor,
+      isCustomDesign: body.isCustomDesign,
+      customImagePath: body.customImagePath,
       notes: body.notes
     };
 

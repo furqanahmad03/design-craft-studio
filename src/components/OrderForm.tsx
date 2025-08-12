@@ -16,6 +16,7 @@ import { Decoration } from '../types/Decoration';
 import productsData from '../app/api/data/products.json';
 import decorationsData from '../app/api/data/decorations.json';
 import React from 'react';
+import { Vendor } from '../types/Order';
 
 export default function OrderForm() {
   const [open, setOpen] = useState(false);
@@ -83,6 +84,7 @@ export default function OrderForm() {
       return;
     }
 
+    // For products, quantity is required
     if (selectedProduct && (!quantity || quantity < 1 || quantity > selectedProduct.quantity)) {
       toast.error('Please enter a valid quantity');
       return;
@@ -93,25 +95,77 @@ export default function OrderForm() {
       return;
     }
 
+    if (designType === 'custom' && !customDesignFile) {
+      toast.error('Please upload a custom design file');
+      return;
+    }
+
     setIsSubmitting(true);
 
-    const orderData = {
-      productName: selectedProduct?.name,
-      productType: selectedProduct?.type,
-      quantity: selectedProduct ? quantity : undefined,
-      basePrice: selectedProduct?.basePrice,
-      totalPrice: selectedProduct ? (selectedProduct.basePrice * quantity) : undefined,
-      designType,
-      selectedDesign: designType === 'premade' ? selectedDesign : undefined,
-      customDesignFile: designType === 'custom' ? customDesignFile : undefined,
-      customerName: customerName.trim(),
-      customerEmail: customerEmail.trim(),
-      status: 'pending' as const,
-      vendor: selectedProduct?.vendor || selectedDecoration?.vendor,
-      notes: notes.trim() || undefined
-    };
-
     try {
+      let uploadedFileName = '';
+      let customImagePath = '';
+      
+      // Handle custom design upload first
+      if (designType === 'custom' && customDesignFile) {
+        const formData = new FormData();
+        formData.append('file', customDesignFile);
+        
+        const uploadResponse = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error('Failed to upload custom design');
+        }
+
+        const uploadResult = await uploadResponse.json();
+        uploadedFileName = uploadResult.filename;
+        customImagePath = uploadResult.filepath;
+        toast.success('Custom design uploaded successfully');
+      }
+
+      // Determine vendor and order type
+      let vendor: Vendor | undefined;
+      let isCustomDesign = false;
+
+      if (selectedProduct) {
+        // Product order - always has vendor
+        vendor = selectedProduct.vendor;
+        // Check if it's a custom design
+        if (designType === 'custom') {
+          isCustomDesign = true;
+        }
+      } else if (selectedDecoration) {
+        if (designType === 'custom') {
+          // Custom decoration design - no vendor, but has custom image
+          isCustomDesign = true;
+          vendor = undefined;
+        } else {
+          // Premade decoration design - has vendor
+          vendor = selectedDecoration.vendor;
+        }
+      }
+
+      const orderData = {
+        productName: selectedProduct?.name,
+        productType: selectedProduct?.type,
+        quantity: selectedProduct ? quantity : undefined,
+        basePrice: selectedProduct?.basePrice,
+        totalPrice: selectedProduct ? (selectedProduct.basePrice * quantity) : undefined,
+        designType,
+        selectedDesign: designType === 'premade' ? selectedDesign : undefined,
+        customDesignFile: designType === 'custom' ? uploadedFileName : undefined,
+        customerName: customerName.trim(),
+        customerEmail: customerEmail.trim(),
+        status: 'pending' as const,
+        vendor: vendor,
+        isCustomDesign: isCustomDesign,
+        customImagePath: isCustomDesign ? customImagePath : undefined,
+        notes: notes.trim() || undefined
+      };
+
       const response = await fetch('/api/orders', {
         method: 'POST',
         headers: {
@@ -136,12 +190,14 @@ export default function OrderForm() {
         setNotes('');
       } else {
         const errorData = await response.json();
-        toast.error(errorData.message || 'Failed to place order');
+        console.error('API Error Response:', errorData);
+        console.error('Order Data Sent:', orderData);
+        toast.error(errorData.error || 'Failed to place order');
       }
     } catch (error) {
       toast.error('Failed to place order');
     } finally {
-      setIsSubmitting(false); // Reset submitting state
+      setIsSubmitting(false);
     }
   };
 

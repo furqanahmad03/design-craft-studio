@@ -56,7 +56,7 @@ export default function OrdersPage() {
       filtered = filtered.filter(order => 
         order.productName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         order.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        order.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        order.customerEmail.toLowerCase().includes(searchTerm.toLowerCase()) ||
         order.id.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
@@ -249,6 +249,7 @@ export default function OrdersPage() {
                       <TableHead className="w-[200px] font-semibold text-gray-900">Product/Decoration</TableHead>
                       <TableHead className="w-[150px] font-semibold text-gray-900">Customer</TableHead>
                       <TableHead className="w-[100px] font-semibold text-gray-900">Design</TableHead>
+                      <TableHead className="w-[100px] font-semibold text-gray-900">Quantity/Price</TableHead>
                       <TableHead className="w-[100px] font-semibold text-gray-900">Total</TableHead>
                       <TableHead className="w-[100px] font-semibold text-gray-900">Status</TableHead>
                       <TableHead className="w-[150px] font-semibold text-gray-900">Date</TableHead>
@@ -261,16 +262,19 @@ export default function OrdersPage() {
                         <TableCell className="font-mono text-sm text-gray-600">
                           {order.id}
                         </TableCell>
-                        <TableCell>
+                        <TableCell className="font-medium">
                           {order.productName ? (
                             <div>
-                              <div className="font-medium text-gray-900">{order.productName}</div>
-                              <div className="text-sm text-gray-500">
-                                {order.quantity} × ${order.basePrice}
-                              </div>
+                              <div className="font-semibold text-gray-900">{order.productName}</div>
+                              <div className="text-sm text-blue-600">Product Order</div>
                             </div>
                           ) : (
-                            <span className="text-gray-400 italic">Decoration Only</span>
+                            <div>
+                              <div className="font-semibold text-gray-900">Decoration</div>
+                              <div className="text-sm text-purple-600">
+                                {order.isCustomDesign ? 'Custom Design' : 'Premade Design'}
+                              </div>
+                            </div>
                           )}
                         </TableCell>
                         <TableCell>
@@ -284,10 +288,20 @@ export default function OrdersPage() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          {order.totalPrice ? (
-                            <span className="font-semibold text-green-600">${order.totalPrice.toFixed(2)}</span>
+                          {order.productName ? (
+                            <div>
+                              <div className="font-medium text-gray-900">{order.quantity}</div>
+                              <div className="text-sm text-gray-500">${order.basePrice} each</div>
+                            </div>
                           ) : (
-                            <span className="text-gray-400 italic">N/A</span>
+                            <div className="text-gray-500">-</div>
+                          )}
+                        </TableCell>
+                        <TableCell>
+                          {order.productName ? (
+                            <span className="font-bold text-green-600">${order.totalPrice}</span>
+                          ) : (
+                            <span className="text-purple-600 font-medium">Custom Design</span>
                           )}
                         </TableCell>
                         <TableCell>
@@ -408,57 +422,95 @@ export default function OrdersPage() {
                 </div>
 
                 {/* Product & Design Details */}
-                {selectedOrder.productName && (
-                  <Card className="border-0 shadow-lg">
-                    <CardHeader className="pb-4 border-b border-gray-100">
-                      <CardTitle className="text-xl text-gray-900 flex items-center gap-3">
-                        <div className="bg-orange-100 p-2 rounded-lg">
-                          <Package className="h-6 w-6 text-orange-600" />
-                        </div>
-                        Product Information
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="space-y-4">
-                          <div className="bg-gray-50 p-4 rounded-lg">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-lg">Product Details</h4>
-                            <div className="space-y-3">
-                              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span className="text-gray-600 font-medium">Name:</span>
-                                <span className="font-semibold text-gray-900">{selectedOrder.productName}</span>
-                              </div>
-                              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span className="text-gray-600 font-medium">Type:</span>
-                                <Badge variant="outline" className="font-medium">{selectedOrder.productType}</Badge>
-                              </div>
-                              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span className="text-gray-600 font-medium">Quantity:</span>
-                                <span className="font-semibold text-gray-900">{selectedOrder.quantity}</span>
-                              </div>
-                            </div>
+                <Card className="border-0 shadow-lg bg-gradient-to-br from-purple-50 to-purple-100">
+                  <CardHeader className="pb-3">
+                    <CardTitle className="text-lg font-semibold text-purple-800 flex items-center gap-2">
+                      <Package className="h-5 w-5" />
+                      Product & Design Details
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {selectedOrder.productName ? (
+                      // Product Order
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Product Name</Label>
+                            <p className="text-purple-900 font-medium">{selectedOrder.productName}</p>
                           </div>
-                        </div>
-                        
-                        <div className="space-y-4">
-                          <div className="bg-gray-50 p-4 rounded-lg">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-lg">Pricing</h4>
-                            <div className="space-y-3">
-                              <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                                <span className="text-gray-600 font-medium">Base Price:</span>
-                                <span className="font-semibold text-gray-900">${selectedOrder.basePrice}</span>
-                              </div>
-                              <div className="flex justify-between items-center py-2">
-                                <span className="text-gray-600 font-medium">Total Price:</span>
-                                <span className="text-2xl font-bold text-green-600">${selectedOrder.totalPrice}</span>
-                              </div>
-                            </div>
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Product Type</Label>
+                            <p className="text-purple-900">{selectedOrder.productType}</p>
+                          </div>
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Quantity</Label>
+                            <p className="text-purple-900 font-medium">{selectedOrder.quantity}</p>
+                          </div>
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Base Price</Label>
+                            <p className="text-purple-900">${selectedOrder.basePrice}</p>
+                          </div>
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Total Price</Label>
+                            <p className="text-purple-900 font-bold text-lg">${selectedOrder.totalPrice}</p>
                           </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                )}
+                    ) : (
+                      // Decoration Order
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Order Type</Label>
+                            <p className="text-purple-900 font-medium">Decoration Order</p>
+                          </div>
+                          <div>
+                            <Label className="text-sm font-medium text-purple-700">Design Type</Label>
+                            <Badge variant={selectedOrder.designType === 'custom' ? 'destructive' : 'default'}>
+                              {selectedOrder.designType === 'custom' ? 'Custom Design' : 'Premade Design'}
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="border-t border-purple-200 pt-4">
+                      <Label className="text-sm font-medium text-purple-700">Design Details</Label>
+                      <div className="mt-2 space-y-3">
+                        {selectedOrder.designType === 'premade' ? (
+                          <div>
+                            <p className="text-purple-900">
+                              <span className="font-medium">Selected Design:</span> {selectedOrder.selectedDesign}
+                            </p>
+                          </div>
+                        ) : (
+                          <div>
+                            <p className="text-purple-900 font-medium mb-2">Custom Design</p>
+                            {selectedOrder.customImagePath && (
+                              <div className="relative">
+                                <img 
+                                  src={selectedOrder.customImagePath} 
+                                  alt="Custom Design" 
+                                  className="w-full max-w-md h-auto rounded-lg border-2 border-purple-200 shadow-sm"
+                                  onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    const placeholder = document.createElement('div');
+                                    placeholder.className = 'w-full max-w-md h-48 bg-gray-100 rounded-lg border-2 border-purple-200 shadow-sm flex items-center justify-center';
+                                    placeholder.innerHTML = '<div class="text-center text-gray-500"><Palette class="h-12 w-12 mx-auto mb-2" /><p>Image not available</p></div>';
+                                    e.currentTarget.parentNode?.appendChild(placeholder);
+                                  }}
+                                />
+                                <div className="mt-2 text-sm text-purple-600">
+                                  <span className="font-medium">File:</span> {selectedOrder.customDesignFile}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
 
                 {/* Design Information */}
                 <Card className="border-0 shadow-lg">
@@ -501,82 +553,74 @@ export default function OrdersPage() {
                 </Card>
 
                 {/* Vendor Information */}
-                <Card className="border-0 shadow-lg">
-                  <CardHeader className="pb-4 border-b border-gray-100">
-                    <CardTitle className="text-xl text-gray-900 flex items-center gap-3">
-                      <div className="bg-teal-100 p-2 rounded-lg">
-                        <MapPin className="h-6 w-6 text-teal-600" />
-                      </div>
-                      Vendor Information
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      {/* Company Info */}
-                      <div className="space-y-4">
-                        <div className="bg-gradient-to-r from-teal-50 to-teal-100 p-6 rounded-xl">
-                          <div className="flex items-center gap-3 mb-4">
-                            <div className="bg-teal-500 p-2 rounded-full">
-                              <MapPin className="h-5 w-5 text-white" />
-                            </div>
-                            <div>
-                              <h4 className="font-bold text-teal-900 text-lg">{selectedOrder.vendor.name}</h4>
-                              <p className="text-teal-700 text-sm">{selectedOrder.vendor.address}</p>
-                            </div>
+                {selectedOrder.vendor ? (
+                  <Card className="border-0 shadow-lg bg-gradient-to-br from-green-50 to-green-100">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg font-semibold text-green-800 flex items-center gap-2">
+                        <Star className="h-5 w-5" />
+                        Vendor Information
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label className="text-sm font-medium text-green-700">Vendor Name</Label>
+                          <p className="text-green-900 font-medium">{selectedOrder.vendor.name}</p>
+                        </div>
+                        <div>
+                          <Label className="text-sm font-medium text-green-700">Rating</Label>
+                          <div className="flex items-center gap-1">
+                            <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                            <span className="text-green-900 font-medium">{selectedOrder.vendor.rating}/5</span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <Star className="h-5 w-5 text-yellow-500 fill-current" />
-                            <span className="font-semibold text-teal-900">{selectedOrder.vendor.rating}/5.0</span>
-                            <span className="text-teal-600 text-sm">Rating</span>
-                          </div>
+                        </div>
+                        <div>
+                          <Label className="text-sm font-medium text-green-700">Timeline</Label>
+                          <p className="text-green-900">{selectedOrder.vendor.timeline}</p>
+                        </div>
+                        <div>
+                          <Label className="text-sm font-medium text-green-700">Phone</Label>
+                          <p className="text-green-900">{selectedOrder.vendor.phone}</p>
                         </div>
                       </div>
                       
-                      {/* Contact Info */}
-                      <div className="space-y-4">
-                        <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl">
-                          <h4 className="font-semibold text-blue-900 mb-4 text-lg">Contact Information</h4>
-                          <div className="space-y-3">
-                            <div className="flex items-center gap-3">
-                              <div className="bg-blue-500 p-2 rounded-lg">
-                                <Phone className="h-4 w-4 text-white" />
-                              </div>
-                              <span className="text-blue-900 font-medium">{selectedOrder.vendor.phone}</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <div className="bg-blue-500 p-2 rounded-lg">
-                                <Mail className="h-4 w-4 text-white" />
-                              </div>
-                              <span className="text-blue-900 font-medium break-all">{selectedOrder.vendor.email}</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <div className="bg-blue-500 p-2 rounded-lg">
-                                <Clock className="h-4 w-4 text-white" />
-                              </div>
-                              <span className="text-blue-900 font-medium">{selectedOrder.vendor.timeline}</span>
-                            </div>
-                          </div>
+                      <div>
+                        <Label className="text-sm font-medium text-green-700">Address</Label>
+                        <p className="text-green-900">{selectedOrder.vendor.address}</p>
+                      </div>
+                      
+                      <div>
+                        <Label className="text-sm font-medium text-green-700">Email</Label>
+                        <p className="text-green-900">{selectedOrder.vendor.email}</p>
+                      </div>
+                      
+                      <div>
+                        <Label className="text-sm font-medium text-green-700">Specializations</Label>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {selectedOrder.vendor.specializations.map((spec, index) => (
+                            <Badge key={index} variant="outline" className="text-green-700 border-green-300">
+                              {spec}
+                            </Badge>
+                          ))}
                         </div>
                       </div>
-                    </div>
-                    
-                    {/* Specializations */}
-                    <div className="mt-8 pt-6 border-t border-gray-100">
-                      <h4 className="font-semibold text-gray-900 mb-4 text-lg">Specializations</h4>
-                      <div className="flex flex-wrap gap-3">
-                        {selectedOrder.vendor.specializations.map((spec, idx) => (
-                          <Badge 
-                            key={idx} 
-                            variant="outline" 
-                            className="px-4 py-2 text-sm font-medium border-2 hover:bg-teal-50 hover:border-teal-300 transition-colors"
-                          >
-                            {spec}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                ) : (
+                  <Card className="border-0 shadow-lg bg-gradient-to-br from-orange-50 to-orange-100">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-lg font-semibold text-orange-800 flex items-center gap-2">
+                        <Palette className="h-5 w-5" />
+                        Custom Design Information
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-orange-900">
+                        This is a custom design order. The design was created by the customer and uploaded directly.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             )}
           </DialogContent>
